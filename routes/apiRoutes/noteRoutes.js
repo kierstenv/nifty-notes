@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getNotes, saveNote, addNote, deleteNote } = require("../../public/assets/js/index.js");
+const { filterByQuery, createNewNote, updateNote, deleteNote } = require("../../lib/notes");
 const { notes } = require("../../db/db.json");
 
 router.get("/notes", (req, res) => {
@@ -7,3 +7,4 @@ router.get("/notes", (req, res) => {
   res.json(savedNotes);
 });
 
+module.exports = router;
