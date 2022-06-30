@@ -15,6 +15,7 @@ router.get("/notes/:id", (req, res) => {
 
 router.post("/notes", (req, res) => {
   const { body } = req;
+  req.body.id = new Date().getTime() * Math.random() * 100000;
   const newNote = createNewNote(body, notes);
   res.json(newNote);
 });
